@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="Layout(content)" th:replace="base::Layout(~{::section})">
+<section>
+<head>
+      <title>sign in</title>
+    
+</head>
+<body style="background-color:powderblue;">
+<section>
+      <div class="container">
+      <div class="row">
+      <div class="col  md-8 offset-md-2">
+      
+      <div class="my-card mt-1">
+      <img style="width:70px;" src="" th:src="@{/img/membership.png}"alt=""/>     
+      <h2 class="text-center "> Register Here!!</h2>
+      
+      <form action="" th:action="@{/do_register}" method="POST" th:object="${user}">
+      
+    <!--name-field-->  
+    <div class="form-group">
+    <label for="name_field" class="form-label">Your First Name</label>
+    <input
+    name="firstName"; 
+    type="text" 
+    class="form-control" 
+    id="name_field" 
+    aria-describedby="emailHelp"
+    placeholder="Enter here"   
+    th:field="*{userDetail.firstName}"
+  </div>
+      
+         
+    <!--Last name-field-->  
+    <div class="form-group">
+    <label for="lastname_field" class="form-label">Your Last Name</label>
+    <input 
+    name="lastName"
+    type="text" 
+    class="form-control" 
+    id="lastname_field" 
+    aria-describedby="emailHelp"
+    placeholder="Enter here"
+    th:field="*{userDetail.lastName}"
+
+     required />    
+  </div>
+  
+     <!--Email-field-->
+      
+    <div class="form-group">
+    <label for="email_field" class="form-label">Your Email</label>
+    <input 
+    name="email"
+    type="email" 
+    class="form-control" 
+    id="email_field" 
+    aria-describedby="emailHelp"
+    placeholder="Enter here" 
+     th:field="*{email}"
+
+    required />   
+  </div>
+  
+   <!--password-field-->
+      
+    <div class="form-group">
+    <label for="paassword_field" class="form-label">Your Password</label>
+    <input 
+    name="password"
+    type="password" 
+    class="form-control" 
+    id="password_field" 
+    aria-describedby="emailHelp"
+    placeholder="Enter here" 
+        th:field="*{password}"
+
+    required />
+    </div>
+    <br>
+    
+    
+    <!--terms and condition-->
+    <div class="form-group form-check text-center">
+    <input type="checkbox"
+    name="enabled"
+    class="form-check-input"
+    id="enabled"
+        th:field="*{userDetail.enabled}"
+
+    />
+    <label for="enabled">Accept terms & condition</label>
+    </div>
+
+    
+    <!--button-->
+    <div class="container text-center">
+    
+    <button type="submit" class="btn bg-primary  text-white">
+     Submit
+    </button>
+    <p> &nbsp</p>
+    <button type="reset" class="btn btn-warning text-white ">
+     Reset
+    </button>
+       </div>
+  
+     
+     
+     </form>
+    </div> 
+    </div>
+    </div>
+     </div >
+
+ 
+       
+</s>
+</section>
+</ht>
